@@ -99,6 +99,10 @@ WSGI_APPLICATION = 'expense_backend.wsgi.application'
 #     }
 # }
 
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
