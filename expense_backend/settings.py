@@ -116,6 +116,15 @@ DATABASES = {
 
 database_url = os.environ.get("DATABASE_URL")
 logger.info(f"DATABASE_URL: {database_url}")
+if database_url:
+    try:
+        DATABASES["default"] = dj_database_url.parse(database_url, conn_max_age=600)
+        logger.info("Successfully parsed DATABASE_URL")
+    except Exception as e:
+        logger.error(f"Failed to parse DATABASE_URL: {e}")
+        raise
+else:
+    logger.warning("DATABASE_URL is not set, using default local database settings.")
 DATABASES["default"] = dj_database_url.parse(database_url)
 #postgresql://rakshana_user:0H1OEEz0Hcn6nBlDa0OsaX76xYiMaunQ@dpg-d1lph27diees73fvi8k0-a.oregon-postgres.render.com/rakshana
 
