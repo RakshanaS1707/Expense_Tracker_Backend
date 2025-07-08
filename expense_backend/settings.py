@@ -111,7 +111,7 @@ DATABASES = {
 }
 
 database_url = os.environ.get("DATABASE_URL")
-logger.info(f"DATABASE_URL: {database_url}")
+
 DATABASES["default"] = dj_database_url.parse(database_url)
 #postgresql://rakshana_user:0H1OEEz0Hcn6nBlDa0OsaX76xYiMaunQ@dpg-d1lph27diees73fvi8k0-a.oregon-postgres.render.com/rakshana
 
