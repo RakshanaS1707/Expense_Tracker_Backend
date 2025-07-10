@@ -312,9 +312,7 @@ class ExpenseSerializer(serializers.ModelSerializer):
         read_only_fields = [
             'user', 'is_verified', 'is_refunded', 'created_date', 'updated_date'
         ]
-        def create(self, validated_data):
-        validated_data['user'] = self.context['request'].user  # <-- Assign user from request
-        return super().create(validated_data)
+        
     def get_total_count(self, obj):
         return 1  # Or adjust logic based on how you're counting
 
