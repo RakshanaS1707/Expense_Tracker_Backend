@@ -570,8 +570,9 @@ CHANNEL_LAYERS = {
         "CONFIG": {
             "hosts": [
                 {
-                    "address": os.getenv("REDIS_URL", "redis://default:<your_password>@<your_redis_host>:6379"),
-                    "ssl": True  # Set to True if using Redis Cloud, Upstash, etc.
+                    "address": os.getenv("REDIS_URL",
+                    "rediss://default:<your_password>@<your_redis_host>:6379"),
+                    "ssl": True  
                 }
             ]
         }
