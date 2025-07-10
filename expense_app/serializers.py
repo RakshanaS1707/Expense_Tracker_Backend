@@ -357,6 +357,7 @@ class BillSerializer(serializers.ModelSerializer):
 class OrderItemSerializer(serializers.ModelSerializer):
     item = serializers.PrimaryKeyRelatedField(queryset=Item.objects.all())
     count = serializers.SerializerMethodField()
+    
     added_date = serializers.DateTimeField(
         format="%Y-%m-%dT%H:%M:%S.%fZ",
         input_formats=[

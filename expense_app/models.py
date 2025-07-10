@@ -279,6 +279,7 @@ class OrderItem(models.Model):
     item = models.ForeignKey(Item, on_delete=models.CASCADE)
     morning_count = models.IntegerField(default=0)
     evening_count = models.IntegerField(default=0)
+    price = models.FloatField(default=0)
     added_date = models.DateTimeField(default=timezone.now)
 
     @property
