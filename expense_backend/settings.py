@@ -566,16 +566,7 @@ SIMPLE_JWT = {
 # Channels Redis Layer
 CHANNEL_LAYERS = {
     "default": {
-        "BACKEND": "channels_redis.core.RedisChannelLayer",
-        "CONFIG": {
-            "hosts": [
-                {
-                    "address": os.getenv("REDIS_URL",
-                    "rediss://default:<your_password>@<your_redis_host>:6379"),
-                    "ssl": True  
-                }
-            ]
-        }
+        "BACKEND": "channels.layers.InMemoryChannelLayer",
     }
 }
 
