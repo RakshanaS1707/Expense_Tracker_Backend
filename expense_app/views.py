@@ -1579,7 +1579,6 @@ def order_list_create(request):
                         morning_count=morning_count,
                         evening_count=evening_count,
                         added_date=added_date,
-                        price=price
                     )
 
                 # Recalculate total price after adding all items
