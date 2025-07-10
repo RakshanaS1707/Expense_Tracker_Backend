@@ -468,7 +468,11 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
+CORS = [
+    "http://localhost:5173",
+    "https://vercel.com/rakshanas-projects-0e091a4b/expense-tracker-frontend",
+    "*"
+]
 CORS_ALLOW_ALL_ORIGINS = True
 
 ROOT_URLCONF = 'expense_backend.urls'

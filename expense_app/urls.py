@@ -45,10 +45,13 @@ urlpatterns = [
     path('transactions/', views.transaction_list_create, name='transaction-list-create'),
     path('transactions/<int:pk>/', views.transaction_detail, name='transaction-detail'),
     
+    
     # Notifications
     path('notifications/', views.notification_list, name='notification-list'),
     path('notifications/<int:pk>/', views.notification_detail, name='notification-detail'),
     path('notifications/mark-all-read/', views.mark_all_notifications_read),
+    path('notifications/clear-all/', views.clear_all_notifications, name='clear-all-notifications'),
+
 
 
     # Daily total of regular and others
