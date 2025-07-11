@@ -429,6 +429,7 @@
 #         },
 #     },
 # }
+
 import os
 from pathlib import Path
 from datetime import timedelta
@@ -467,6 +468,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+  
 ]
 CORS = [
     "http://localhost:5173",
@@ -474,6 +476,14 @@ CORS = [
     "*"
 ]
 CORS_ALLOW_ALL_ORIGINS = True
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://expense-tracker-frontend-tan-six.vercel.app',
+]
+CSRF_COOKIE_SECURE = True
+CSRF_COOKIE_SAMESITE = 'None'
+SESSION_COOKIE_SECURE = True
+SESSION_COOKIE_SAMESITE = 'None'
 
 ROOT_URLCONF = 'expense_backend.urls'
 
